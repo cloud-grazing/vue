@@ -1,0 +1,215 @@
+/*margin padding */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,p,blockquote,th,td {
+    margin:0;
+    padding:0;
+}
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+}
+ol,ul {
+    list-style:none;
+}
+/*font-style,font-weight*/
+address,caption,cite,code,dfn,em,strong,th,var {
+    font-style:normal;
+    font-weight:normal;
+}
+/*del table border*/
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/*del fieldset and img border*/
+fieldset,img {
+    border:0;
+}
+/*caption and th text-align:left*/
+caption,th {
+    text-align:left;
+}
+q:before,q:after {
+    content:'';
+}
+
+/*clear float*/
+.clearfix:before, .clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+    clear:both;
+}
+.clearfix {
+    *zoom:1;
+}
+
+html,
+body,
+#app,
+.main {
+    min-height: 100%;
+}
+body,
+button,
+input {
+    font-family: "Helvetica Neue",Helvetica,"PingFang SC","Hiragino Sans GB","Microsoft YaHei","微软雅黑",Arial,sans-serif;
+}
+* {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* 共用-主頁 */
+.main {
+    background: #F5F7FA;
+
+    .main-title {
+        margin: 0 0 10px;
+        font-size: 26px;
+        color: #404E67;
+    }
+}
+
+/* 共用 */
+.el-popover,
+.el-dialog__wrapper {
+    .el-button {
+        border-radius: 2px;
+        border: 0;
+    }
+    .is-focus .el-checkbox__inner {
+        border-color: #06B76C;
+    }
+    .is-checked .el-radio__inner {
+        border-color: #06B76C;
+        background-color: #FFF;
+    }
+    .is-checked .el-radio__label {
+        color: #404e67;
+    }
+    /* 多選框設計變更 */
+    .el-radio__label {
+        color: #818b9d;
+    }
+    .el-checkbox__inner:hover {
+        border-color: #06B76C;
+    }
+    .el-radio__input.is-checked .el-radio__inner::after {
+        -webkit-transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) scale(1);
+    }
+    .el-radio__inner::after {
+        background-color: #06B76C;
+        width: 9px;
+        height: 9px;
+    }
+    .el-radio.is-bordered.is-checked {
+        border-color: #06B76C;
+    }
+    .el-checkbox__input.is-indeterminate .el-checkbox__inner,
+    .is-checked .el-checkbox__inner {
+        background-color: #06B76C;
+        border-color: #06B76C;
+    }
+    .is-checked .el-checkbox__label {
+        color: #404e67;
+    }
+    .el-checkbox {
+        color: #606266;
+        font-weight: 500;
+        font-size: 14px;
+        cursor: pointer;
+        user-select: none;
+    }
+}
+/* 共用-drawer */
+.el-drawer {
+    overflow-y: scroll;
+
+    .el-drawer__header {
+        padding: 30px 20px 0 40px;
+        margin-bottom: 0;
+        font-size: 18px;
+        color: #404E67;
+    
+        .el-drawer__close-btn {
+            color: #A7AEBB;
+        }
+    }
+    .el-drawer__body {
+        padding: 20px 40px;
+    }
+}
+/* 共用-tabs */
+.el-tabs {
+    .el-tabs__header {
+        .el-tabs__nav {
+            .el-tabs__active-bar {
+                background: #22C2DC;
+            }
+            .el-tabs__item {
+                color: #A7AEBB;
+
+                &:hover,
+                &.is-active {
+                    color: #22C2DC;
+                }
+            }
+        }
+    }
+}
+/* 共用-collapse */
+.el-collapse {
+    font-size: 13px;
+    border: none;
+
+    .el-collapse-item {
+        margin-bottom: 10px;
+        box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.22);
+
+        .el-collapse-item__header {
+            color: #404E67;
+            padding: 0 13px;
+
+            .icon {
+                margin-right: 12px
+            }
+            .el-collapse-item__arrow {
+                display: none;
+            }
+            .el-icon-plus,
+            .el-icon-minus {
+                color: #4890F7;
+                font-weight: bold;
+            }
+        }
+        .el-collapse-item__wrap {
+            .el-collapse-item__content {
+                padding: 0;
+            }
+        }
+    }
+}
+
+/* 共用-pagination */
+.el-pagination {
+    &.is-background {
+        .el-pager {
+            li {
+                background: #FFF;
+                border: 1px solid #DAE1E8;
+            }
+        }
+        .btn-prev,
+        .btn-next {
+            background: #FFF;
+            border: 1px solid #DAE1E8;
+
+            &:disabled {
+                color: rgba(218, 225, 232, .6);
+                background: #FFF;
+                border: 1px solid rgba(218, 225, 232, .6);
+            }
+        }
+    }
+}

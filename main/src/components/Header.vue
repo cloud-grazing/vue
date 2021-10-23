@@ -1,22 +1,25 @@
 <template>
     <v-system-bar app height="60" class="header">
+        <v-app-bar-nav-icon @click="controlDrawer" />
         <img src="@/assets/logo.png" alt="" width="50" />
         <div class="company">
             <span class="first">S P A C E</span>
-            <span class="second">LEDA Technology | AIoT Platform</span>
+            <span v-if="handelHeaderHide" class="second">LEDA Technology | AIoT Platform</span>
         </div>
-        <v-breadcrumbs :items="breadcrumbs" class="bread" activeClass="bread-active">
-            <template v-slot:divider>
-                <v-icon>mdi-chevron-right</v-icon>
-            </template>
-        </v-breadcrumbs>
-        <v-spacer />
-        <div class="user">
-            <v-icon large color="while">
-                mdi-account
-            </v-icon>
-            haix.yeh@gmail.com
-        </div>
+        <template v-if="login">
+            <v-breadcrumbs v-if="handelHeaderHide" :items="breadcrumbs" class="bread" activeClass="bread-active">
+                <template v-slot:divider>
+                    <v-icon>mdi-chevron-right</v-icon>
+                </template>
+            </v-breadcrumbs>
+            <v-spacer />
+            <div class="user">
+                <v-icon v-if="handelHeaderHide" large color="while">
+                    mdi-account
+                </v-icon>
+                haix.yeh@gmail.com
+            </div>
+        </template>
     </v-system-bar>
 </template>
 
@@ -25,11 +28,21 @@
 export default {
     name: 'Home',
     components: {
-
+    },
+    props: {
+        login: {
+            type: Boolean,
+            require: false,
+            default: () => false
+        },
+        drawer: {
+            type: Boolean,
+            require: false,
+            default: () => true
+        }
     },
     data() {
         return {
-            drawer: null,
             breadcrumbs: [
                 {
                     text: 'test',
@@ -39,14 +52,31 @@ export default {
             ]
         };
     },
+    computed: {
+        handelHeaderHide() {
+            return this.headelHide(this.$vuetify.breakpoint.name);
+        }
+    },
     watch: {
         $route(route) {
             console.log(route.matched, 'onWatch');
             this.routerBread(route);
+        },
+        $vuetify: {
+            breakpoint: {
+                handler(breakpoint) {
+                    this.handelHeaderHide = this.headelHide(breakpoint);
+                },
+                deep: true,
+                immediate: true
+            }
+
+        },
+        drawer(val) {
+            console.log(val, 'onEvent');
         }
     },
     created() {
-        // console.log(this.$route.matched, 'fished router');
         this.routerBread(this.$route);
     },
     methods: {
@@ -68,6 +98,31 @@ export default {
                     });
                 });
             }
+        },
+        headelHide(breakpointName) {
+            let show = true;
+            // switch (breakpointName) {
+            //     case 'xs': return 220;
+            //     case 'sm': return 400;
+            //     case 'md': return 500;
+            //     case 'lg': return 600;
+            //     case 'xl': return 800;
+            // }
+            switch (breakpointName) {
+                case 'lg':
+                    show = true;
+                    break;
+                case 'xl':
+                    show = true;
+                    break;
+                default:
+                    show = false;
+                    break;
+            }
+            return show;
+        },
+        controlDrawer() {
+            this.$emit('controlDrawer', !this.drawer);
         }
     }
 };
@@ -79,7 +134,7 @@ export default {
     background: #1d5ba2;
     color: #FFF;
     .company {
-        width: 250px;
+        max-width: 250px;
         .first,
         .second {
             display: inline-block;

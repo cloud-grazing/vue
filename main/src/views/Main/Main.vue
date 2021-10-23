@@ -1,7 +1,7 @@
 <template>
     <v-app id="inspire">
-        <Header />
-        <MainNav />
+        <Header :login="true" :drawer="drawer" @controlDrawer="controlDrawer" />
+        <MainNav :drawer="drawer" @controlDrawer="controlDrawer" />
         <v-main>
             <SubNav />
             <router-view />
@@ -11,19 +11,17 @@
 
 <script>
 import { mapState } from 'vuex';
-// import Header from '@/components/Header';
-import SubNav from './components/SubNav.vue';
 
 export default {
     name: 'Main',
     components: {
-        SubNav,
+        SubNav: () => import('./components/SubNav.vue'),
         Header: () => import('@/components/Header'),
         MainNav: () => import('./components/MainNav.vue')
     },
     data() {
         return {
-            drawer: null,
+            drawer: true,
             breadcrumbs: [
                 {
                     text: 'test',
@@ -43,45 +41,13 @@ export default {
     created() {
     },
     methods: {
+        controlDrawer(val) {
+            this.drawer = val;
+        }
     }
 };
 </script>
 
 <style lang="scss">
-#nav {
-  a {
-    display: block;
-    font-weight: bold;
-    color: rgb(141, 141, 141);
-
-    &.router-link-exact-active {
-      color: rgb(218, 88, 79);
-    }
-  }
-}
-
-.main .el-header {
-  background-color: #B3C0D1;
-  color: var(--el-text-color-primary);
-  text-align: center;
-  line-height: 60px;
-  height: 100px;
-  overflow: hidden;
-}
-.main .el-container {
-  height: calc(100vh - 100px);
-}
-.main .el-aside {
-  background-color: #d3dce6;
-  text-align: center;
-  overflow-y: auto;
-}
-
-.el-main {
-  background-color: #E9EEF3;
-  text-align: center;
-  overflow-y: auto;
-}
-
 </style>
 <style src="@/css/common.scss" lang="scss"></style>

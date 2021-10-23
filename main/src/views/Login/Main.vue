@@ -1,34 +1,46 @@
 <template>
-    <div class="hello">
-        <h1>{{ msg2 }}</h1>
-    </div>
+    <v-app id="inspire">
+        <Header :login="false" />
+        <v-main>
+            <router-view />
+        </v-main>
+    </v-app>
 </template>
 
 <script>
+import { mapState } from 'vuex';
+
 export default {
-    name: 'Login',
+    name: 'Main',
+    components: {
+        Header: () => import('@/components/Header')
+    },
     data() {
         return {
-            msg2: 'Login'
+            drawer: null,
+            breadcrumbs: [
+                {
+                    text: 'test',
+                    disabled: false,
+                    href: 'test'
+                }
+            ]
         };
+    },
+    computed: {
+        ...mapState([
+            'Data'
+        ])
+    },
+    watch: {
+    },
+    created() {
+    },
+    methods: {
     }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
-}
+<style lang="scss">
 </style>
+<style src="@/css/common.scss" lang="scss"></style>

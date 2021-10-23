@@ -1,6 +1,6 @@
 <template>
     <v-navigation-drawer
-        v-model="drawer"
+        v-model="drawerModel"
         app
         width="150"
         top="60"
@@ -46,15 +46,31 @@ export default {
     name: 'MainNav',
     components: {
     },
+    props: {
+        drawer: {
+            type: Boolean,
+            require: false,
+            default: () => true
+        }
+    },
     data() {
         return {
-            drawer: null
+            // drawer: null
         };
     },
     computed: {
         ...mapState([
             'Data'
-        ])
+        ]),
+        drawerModel: {
+            get: function get() {
+                return this.drawer;
+            },
+            set: function set(val) {
+                console.log(val, 'val');
+                this.$emit('controlDrawer', val);
+            }
+        }
     },
     watch: {
     },

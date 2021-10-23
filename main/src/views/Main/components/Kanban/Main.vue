@@ -12,9 +12,6 @@ export default {
         return {
             msg: 'Kanban'
         };
-    },
-    created() {
-        // console.log(this.$router.options.routes);
     }
 };
 </script>

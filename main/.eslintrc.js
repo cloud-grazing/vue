@@ -53,6 +53,15 @@ module.exports = {
             }
         }],
         'vue/html-self-closing': [2, { html: { void: 'always' } }],
-        'vue/singleline-html-element-content-newline': 0
+        'vue/singleline-html-element-content-newline': 0,
+        "no-param-reassign": [
+            "error",
+            {
+                "props": true,
+                "ignorePropertyModificationsFor": [
+                    "state" // for vuex state
+                ]
+            }
+        ]
     }
 };

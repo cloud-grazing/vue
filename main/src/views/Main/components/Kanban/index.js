@@ -4,10 +4,10 @@ import edgeLists from './components/EdgeLists';
 export default {
     path: '/kanban',
     name: 'Kanban',
-    redirect: '/dataFlow',
+    redirect: '/edgeLists',
     component: () => import('./Main'),
     children: [
-        dataFlow,
-        edgeLists
+        edgeLists,
+        dataFlow
     ]
 };

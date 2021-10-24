@@ -1,0 +1,22 @@
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "taskId": "t210929-01574",
+                "project": "CL_color_burrs",
+                "modelName": "object detection",
+                "status": "training(success)",
+                "step": "4/5",
+                "creatingTime": "2021-09-29 23:35:14",
+                "creatingUser": "haix.yeh@gmail.com"
+            }
+        ],
+        "pagination": {
+            "page": 1,
+            "pageCount": 10,
+            "total": 260
+        }
+    },
+    "msg": ""
+}

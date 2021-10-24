@@ -30,7 +30,6 @@ export default {
         }
     },
     created() {
-        console.log(this.$router.currentRoute, 'this.$router.currentRoute');
         this.currentRoute = this.$router.currentRoute && this.$router.currentRoute.matched[1] && this.$router.currentRoute.matched[1].path;
         Object.assign(this.routerConfig, this.$router.options.routes[0]);
         this.routerTab();
@@ -40,7 +39,7 @@ export default {
             if (!this.routerConfig) {
                 return;
             }
-            console.log(this.routerConfig, 'this.routerConfig');
+
             this.routerConfig.children.forEach((route) => {
                 if (this.currentRoute === route.path && route.children && route.children.length) {
                     const subRouter = [];

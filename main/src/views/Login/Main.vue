@@ -29,7 +29,7 @@ export default {
     },
     computed: {
         ...mapState([
-            'Data'
+            'data'
         ])
     },
     watch: {

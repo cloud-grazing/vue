@@ -1,0 +1,48 @@
+{
+    "code": 200,
+    "data": {
+        "model": [
+            {
+                "id": 1,
+                "text": "No,I'm mseter."
+            },
+            {
+                "id": 2,
+                "text": "OMG, I very like it."
+            },
+            {
+                "id": 3,
+                "text": "Shit! Super big."
+            }
+        ],
+        "dataType": ["images", "folder", "file"],
+        "edgeID": [
+            {
+                "id": 1,
+                "text": "ED-000009"
+            },
+            {
+                "id": 2,
+                "text": "ED-000010"
+            },
+            {
+                "id": 3,
+                "text": "ED-000011"
+            }
+        ],
+        "automation": [
+            {
+                "id": 1,
+                "text": "RPA-flow-IMG-001"
+            },
+            {
+                "id": 2,
+                "text": "RPA-flow-IMG-002"
+            },
+            {
+                "id": 3,
+                "text": "RPA-flow-IMG-003"
+            }
+        ]
+    }
+}

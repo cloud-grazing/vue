@@ -1,6 +1,6 @@
 <template>
     <v-app id="inspire">
-        <Header :login="true" :drawer="drawer" @controlDrawer="controlDrawer" />
+        <Header :login="true" :drawer="drawer" :user="data.user" @controlDrawer="controlDrawer" />
         <MainNav :drawer="drawer" @controlDrawer="controlDrawer" />
         <v-main>
             <SubNav />
@@ -10,14 +10,15 @@
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
+import init from '@/mock/init';
 
 export default {
     name: 'Main',
     components: {
-        SubNav: () => import('./components/SubNav.vue'),
         Header: () => import('@/components/Header'),
-        MainNav: () => import('./components/MainNav.vue')
+        MainNav: () => import('./components/MainNav.vue'),
+        SubNav: () => import('./components/SubNav.vue')
     },
     data() {
         return {
@@ -33,16 +34,23 @@ export default {
     },
     computed: {
         ...mapState([
-            'Data'
+            'data'
         ])
     },
     watch: {
     },
     created() {
+        this.getInit();
     },
     methods: {
+        ...mapActions([
+            'setData'
+        ]),
         controlDrawer(val) {
             this.drawer = val;
+        },
+        getInit() {
+            this.setData(init.data);
         }
     }
 };

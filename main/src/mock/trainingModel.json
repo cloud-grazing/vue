@@ -1,0 +1,16 @@
+{
+    "code": 200,
+    "data": {
+        "datasetId": "d200921-002",
+        "batchSize": 8,
+        "learningRate": 0.0001,
+        "epoch": 100,
+        "perEpoch": 0,
+        "scale": 0,
+        "featureExtract": true,
+        "device": "GPU",
+        "CpuId": 0,
+        "TrainRatio": 0.8
+    },
+    "msg": ""
+}

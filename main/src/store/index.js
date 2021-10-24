@@ -5,20 +5,22 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
     state: {
-        Data: {
+        data: {
+            user: ''
         },
         mainRouter: ''
     },
     mutations: {
-        getData: (state) => state.Data,
-        getMainRouter: (state) => state.mainRouter
+        setData: (state, obj) => {
+            state.data = { ...state.data, ...obj };
+        }
     },
     actions: {
         setData: ({ commit }, obj = {}) => { commit('setData', obj); },
         setMainRouter: ({ commit }, obj = {}) => { commit('setMainRouter', obj); }
     },
     modules: {
-        setData: (state, obj) => { state.Data = { ...state.Data, ...obj }; },
-        setMainRouter: (state, strging) => { state.mainRouter = { strging }; }
+        // setData: (state, obj) => { state.data = { ...state.data, ...obj }; },
+        // setMainRouter: (state, strging) => { state.mainRouter = { strging }; }
     }
 });

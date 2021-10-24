@@ -67,7 +67,6 @@ export default {
                 return this.drawer;
             },
             set: function set(val) {
-                console.log(val, 'val');
                 this.$emit('controlDrawer', val);
             }
         }

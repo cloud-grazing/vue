@@ -1,0 +1,23 @@
+{
+    "code": 200,
+    "data": {
+        "list": [
+            {
+                "updateTmsp": "2021/09/26 11:20:30",
+                "metaId": "m2109133-0001",
+                "edgeId": "ED-000009",
+                "heartBeatStatus": "alive"
+            }
+        ],
+        "status": {
+            "totaolEdgeDevice": 25,
+            "alive": 20,
+            "N/A": 5
+        },
+        "pagination": {
+            "page": 1,
+            "pageCount": 10,
+            "total": 260
+        }
+    }
+}

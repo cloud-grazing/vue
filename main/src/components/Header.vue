@@ -17,7 +17,7 @@
                 <v-icon v-if="handelHeaderHide" large color="while">
                     mdi-account
                 </v-icon>
-                haix.yeh@gmail.com
+                {{ user }}
             </div>
         </template>
     </v-system-bar>
@@ -39,6 +39,11 @@ export default {
             type: Boolean,
             require: false,
             default: () => true
+        },
+        user: {
+            type: String,
+            require: false,
+            default: ''
         }
     },
     data() {
@@ -59,7 +64,6 @@ export default {
     },
     watch: {
         $route(route) {
-            console.log(route.matched, 'onWatch');
             this.routerBread(route);
         },
         $vuetify: {
@@ -71,9 +75,6 @@ export default {
                 immediate: true
             }
 
-        },
-        drawer(val) {
-            console.log(val, 'onEvent');
         }
     },
     created() {

@@ -1,7 +1,11 @@
 <template>
     <div class="edge-tabel">
+        <div v-for="(item, index) in statusShow" :key="index" class="text-block">
+            <div class="tip-title">{{ item['text'] }}</div>
+            <div class="tip-number">{{ item['value'] }}</div>
+        </div>
         <v-data-table
-            :headers="data.headers"
+            :headers="headers"
             :items="data.list"
             :page.sync="data.page"
             :itemsPerPage="data.itemsPerPage"
@@ -34,22 +38,22 @@ export default {
     name: 'EdgeLists',
     data() {
         return {
-            data: {
-                page: 1,
-                pageCount: 10,
-                itemsPerPage: 10,
-                headers: [
+            headers: [
                 // {
                 //     text: 'Dessert (100g serving)',
                 //     align: 'start',
                 //     sortable: false,
                 //     value: 'name'
                 // },
-                    { text: 'update_tmsp ', value: 'updateTmsp' },
-                    { text: 'meta_id', value: 'metaId' },
-                    { text: 'edge_id', value: 'edgeId' },
-                    { text: 'heart_beat_status', value: 'heartBeatStatus' }
-                ],
+                { text: 'update_tmsp ', value: 'updateTmsp' },
+                { text: 'meta_id', value: 'metaId' },
+                { text: 'edge_id', value: 'edgeId' },
+                { text: 'heart_beat_status', value: 'heartBeatStatus' }
+            ],
+            data: {
+                page: 1,
+                pageCount: 10,
+                itemsPerPage: 10,
                 list: [
                     {
                         edgeId: 'ED-000009',
@@ -63,17 +67,46 @@ export default {
                         updateTmsp: '2021/09/26 11:20:30',
                         heartBeatStatus: 'N/A'
                     }
-                ]
+                ],
+                status: {
+                    totaolEdgeDevice: 9,
+                    alive: 5,
+                    'N/A': 4
+                }
             }
 
         };
     },
+    computed: {
+        statusShow() {
+            const { status: { totaolEdgeDevice, alive } } = this.data;
+            const newStatus = [
+                {
+                    text: 'Totaol Edge Device',
+                    value: totaolEdgeDevice
+                },
+                {
+                    text: 'alive',
+                    value: alive
+                },
+                {
+                    text: 'N/A',
+                    value: this.data.status['N/A']
+                }
+            ];
+            return newStatus;
+        }
+    },
     created() {
         console.log(edgeList, 'edgeList');
+        this.data = { ...this.data, ...edgeList.data };
     },
     methods: {
         itemRowBackground(item) {
             return item.heartBeatStatus === 'N/A' && 'tr-red';
+        },
+        camalize(str) {
+            return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toLocaleUpperCase());
         }
     }
 };
@@ -84,6 +117,30 @@ export default {
     .edge-tabel {
         margin: 0 auto;
         max-width: 800px;
+        color: #707070;
+        .text-block {
+            display: inline-block;
+            vertical-align: middle;
+            width: 33%;
+            text-align: center;
+            font-weight: bold;
+            .tip-title {
+                font-size: 20px;
+                overflow : hidden;
+                text-overflow : ellipsis;
+                white-space : nowrap;
+                text-decoration: underline;
+            }
+            .tip-number {
+                font-size: 80px;
+            }
+            &:nth-child(1) .tip-number {
+                font-size: 50px;
+            }
+            &:nth-child(3) .tip-number {
+                color: #F00;
+            }
+        }
     }
 </style>
 

@@ -7,17 +7,63 @@
                 "metaId": "m2109133-0001",
                 "edgeId": "ED-000009",
                 "heartBeatStatus": "alive"
+            },
+            {
+                "updateTmsp": "2021/09/26 11:00:29",
+                "metaId": "m210920-0211",
+                "edgeId": "ED-000001",
+                "heartBeatStatus": "alive"
+            },
+            {
+                "updateTmsp": "2021/09/21 19:20:48",
+                "metaId": "m210910-0002",
+                "edgeId": "ED-000002",
+                "heartBeatStatus": "N/A"
+            },
+            {
+                "updateTmsp": "2021/09/26 11:20:30",
+                "metaId": "m210913-0001",
+                "edgeId": "ED-000009",
+                "heartBeatStatus": "alive"
+            },
+            {
+                "updateTmsp": "2021/09/30 11:20:30",
+                "metaId": "m2109133-0003",
+                "edgeId": "ED-000009",
+                "heartBeatStatus": "N/A"
+            },
+            {
+                "updateTmsp": "2021/09/26 11:20:30",
+                "metaId": "m2109133-0001",
+                "edgeId": "ED-000009",
+                "heartBeatStatus": "alive"
+            },
+            {
+                "updateTmsp": "2021/09/21 19:20:48",
+                "metaId": "m210910-0002",
+                "edgeId": "ED-000002",
+                "heartBeatStatus": "N/A"
+            },
+            {
+                "updateTmsp": "2021/09/26 11:20:30",
+                "metaId": "m210913-0001",
+                "edgeId": "ED-000009",
+                "heartBeatStatus": "alive"
+            },
+            {
+                "updateTmsp": "2021/09/30 11:20:30",
+                "metaId": "m2109133-0003",
+                "edgeId": "ED-000009",
+                "heartBeatStatus": "N/A"
             }
         ],
         "status": {
-            "totaolEdgeDevice": 25,
-            "alive": 20,
-            "N/A": 5
+            "totaolEdgeDevice": 9,
+            "alive": 5,
+            "N/A": 4
         },
-        "pagination": {
-            "page": 1,
-            "pageCount": 10,
-            "total": 260
-        }
+        "page": 1,
+        "pageCount": 10,
+        "itemsPerPage": 10
     }
 }

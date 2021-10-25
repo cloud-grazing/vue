@@ -1,140 +1,111 @@
 <template>
-    <div>
+    <div class="edge-tabel">
         <v-data-table
-            :headers="headers"
-            :items="desserts"
-            :page.sync="page"
-            :itemsPerPage="itemsPerPage"
+            :headers="data.headers"
+            :items="data.list"
+            :page.sync="data.page"
+            :itemsPerPage="data.itemsPerPage"
             hideDefaultFooter
             class="elevation-1"
-            @page-count="pageCount = $event"
+            :itemClass="itemRowBackground"
+            @page-count="data.pageCount = $event"
         />
         <div class="text-center pt-2">
             <v-pagination
-                v-model="page"
-                :length="pageCount"
+                v-model="data.page"
+                :length="data.pageCount"
             />
-            <v-text-field
+            <!-- <v-text-field
                 :value="itemsPerPage"
                 label="Items per page"
                 type="number"
                 min="-1"
                 max="15"
                 @input="itemsPerPage = parseInt($event, 10)"
-            />
+            /> -->
         </div>
     </div>
 </template>
 
 <script>
+import edgeList from '@/mock/edgeList';
+
 export default {
     name: 'EdgeLists',
     data() {
         return {
-            page: 1,
-            pageCount: 0,
-            itemsPerPage: 10,
-            headers: [
-                {
-                    text: 'Dessert (100g serving)',
-                    align: 'start',
-                    sortable: false,
-                    value: 'name'
-                },
-                { text: 'Calories', value: 'calories' },
-                { text: 'Fat (g)', value: 'fat' },
-                { text: 'Carbs (g)', value: 'carbs' },
-                { text: 'Protein (g)', value: 'protein' },
-                { text: 'Iron (%)', value: 'iron' }
-            ],
-            desserts: [
-                {
-                    name: 'Frozen Yogurt',
-                    calories: 159,
-                    fat: 6.0,
-                    carbs: 24,
-                    protein: 4.0,
-                    iron: '1%'
-                },
-                {
-                    name: 'Ice cream sandwich',
-                    calories: 237,
-                    fat: 9.0,
-                    carbs: 37,
-                    protein: 4.3,
-                    iron: '1%'
-                },
-                {
-                    name: 'Eclair',
-                    calories: 262,
-                    fat: 16.0,
-                    carbs: 23,
-                    protein: 6.0,
-                    iron: '7%'
-                },
-                {
-                    name: 'Cupcake',
-                    calories: 305,
-                    fat: 3.7,
-                    carbs: 67,
-                    protein: 4.3,
-                    iron: '8%'
-                },
-                {
-                    name: 'Gingerbread',
-                    calories: 356,
-                    fat: 16.0,
-                    carbs: 49,
-                    protein: 3.9,
-                    iron: '16%'
-                },
-                {
-                    name: 'Jelly bean',
-                    calories: 375,
-                    fat: 0.0,
-                    carbs: 94,
-                    protein: 0.0,
-                    iron: '0%'
-                },
-                {
-                    name: 'Lollipop',
-                    calories: 392,
-                    fat: 0.2,
-                    carbs: 98,
-                    protein: 0,
-                    iron: '2%'
-                },
-                {
-                    name: 'Honeycomb',
-                    calories: 408,
-                    fat: 3.2,
-                    carbs: 87,
-                    protein: 6.5,
-                    iron: '45%'
-                },
-                {
-                    name: 'Donut',
-                    calories: 452,
-                    fat: 25.0,
-                    carbs: 51,
-                    protein: 4.9,
-                    iron: '22%'
-                },
-                {
-                    name: 'KitKat',
-                    calories: 518,
-                    fat: 26.0,
-                    carbs: 65,
-                    protein: 7,
-                    iron: '6%'
-                }
-            ]
+            data: {
+                page: 1,
+                pageCount: 10,
+                itemsPerPage: 10,
+                headers: [
+                // {
+                //     text: 'Dessert (100g serving)',
+                //     align: 'start',
+                //     sortable: false,
+                //     value: 'name'
+                // },
+                    { text: 'update_tmsp ', value: 'updateTmsp' },
+                    { text: 'meta_id', value: 'metaId' },
+                    { text: 'edge_id', value: 'edgeId' },
+                    { text: 'heart_beat_status', value: 'heartBeatStatus' }
+                ],
+                list: [
+                    {
+                        edgeId: 'ED-000009',
+                        metaId: 'm2109133-0001',
+                        updateTmsp: '2021/09/26 11:20:30',
+                        heartBeatStatus: 'alive'
+                    },
+                    {
+                        edgeId: 'ED-000002',
+                        metaId: 'm2109133-0002',
+                        updateTmsp: '2021/09/26 11:20:30',
+                        heartBeatStatus: 'N/A'
+                    }
+                ]
+            }
+
         };
+    },
+    created() {
+        console.log(edgeList, 'edgeList');
+    },
+    methods: {
+        itemRowBackground(item) {
+            return item.heartBeatStatus === 'N/A' && 'tr-red';
+        }
     }
 };
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
+    .edge-tabel {
+        margin: 0 auto;
+        max-width: 800px;
+    }
+</style>
 
+<style lang="scss">
+.edge-tabel {
+    .v-data-table__wrapper {
+         box-shadow: 0px 0px 4px 0px #A0A0A0;
+    }
+    .v-data-table {
+        color: #3D3D3D;
+         .v-data-table-header th {
+             font-size: 16px;
+             font-weight: bold;
+        }
+    }
+    .tr-red {
+        background-color: #EFC1C2;
+    }
+    .v-pagination  {
+        button {
+            box-shadow: 0px 0px 2px 1px rgb(66 35 35 / 45%);
+        }
+    }
+}
 </style>

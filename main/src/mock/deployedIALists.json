@@ -1,0 +1,79 @@
+{
+    "code": 200,
+    "data": {
+        "List": [
+            {
+                "IA_DeviceID": "Jetson-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:20:30",
+                "DeployedUser": "Johnson.wang",
+                "IA_Status": "active"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "active"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "active"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "active"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "down"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "down"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "active"
+            },
+            {
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "DeployedModel": "obj-det-001",
+                "DeployedTmsp": "2021/09/26 11:00:29",
+                "DeployedUser": "Daniel.Huang",
+                "IA_Status": "down"
+            }
+        ],
+        "Status": {
+            "TotaolEdgeDevice": 9,
+            "Alive": 5,
+            "Dead": 4
+        },
+        "Page": 1,
+        "PageCount": 10,
+        "ItemsPerPage": 10
+    }
+}

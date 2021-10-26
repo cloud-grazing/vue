@@ -45,10 +45,10 @@ export default {
                 //     sortable: false,
                 //     value: 'name'
                 // },
-                { text: 'update_tmsp ', value: 'updateTmsp' },
-                { text: 'meta_id', value: 'metaId' },
-                { text: 'edge_id', value: 'edgeId' },
-                { text: 'heart_beat_status', value: 'heartBeatStatus' }
+                { text: 'update_tmsp ', value: 'updateTmsp', align: 'center' },
+                { text: 'meta_id', value: 'metaId', align: 'center' },
+                { text: 'edge_id', value: 'edgeId', align: 'center' },
+                { text: 'heart_beat_status', value: 'heartBeatStatus', align: 'center' }
             ],
             data: {
                 page: 1,
@@ -135,7 +135,7 @@ export default {
                 font-size: 80px;
             }
             &:nth-child(1) .tip-number {
-                font-size: 50px;
+                font-size: 65px;
             }
             &:nth-child(3) .tip-number {
                 color: #F00;

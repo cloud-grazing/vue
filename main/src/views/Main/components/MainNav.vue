@@ -1,6 +1,7 @@
 <template>
     <v-navigation-drawer
         v-model="drawerModel"
+        class="main-nav"
         app
         width="150"
         top="60"
@@ -81,5 +82,8 @@ export default {
 </script>
 
 <style lang="scss">
+.main-nav {
+    box-shadow: 0px 0px 5px 0px #a0a0a0;
+}
 </style>
 <style src="@/css/common.scss" lang="scss"></style>

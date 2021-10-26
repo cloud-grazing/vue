@@ -1,69 +1,69 @@
 {
     "code": 200,
     "data": {
-        "list": [
+        "List": [
             {
-                "updateTmsp": "2021/09/26 11:20:30",
-                "metaId": "m2109133-0001",
-                "edgeId": "ED-000009",
-                "heartBeatStatus": "alive"
+                "UpdateTmsp": "2021/09/26 11:20:30",
+                "MetaID": "m2109133-0001",
+                "EdgeID": "ED-000009",
+                "HeartBeatStatus": "alive"
             },
             {
-                "updateTmsp": "2021/09/26 11:00:29",
-                "metaId": "m210920-0211",
-                "edgeId": "ED-000001",
-                "heartBeatStatus": "alive"
+                "UpdateTmsp": "2021/09/26 11:00:29",
+                "MetaID": "m210920-0211",
+                "EdgeID": "ED-000001",
+                "HeartBeatStatus": "alive"
             },
             {
-                "updateTmsp": "2021/09/21 19:20:48",
-                "metaId": "m210910-0002",
-                "edgeId": "ED-000002",
-                "heartBeatStatus": "N/A"
+                "UpdateTmsp": "2021/09/21 19:20:48",
+                "MetaID": "m210910-0002",
+                "EdgeID": "ED-000002",
+                "HeartBeatStatus": "N/A"
             },
             {
-                "updateTmsp": "2021/09/26 11:20:30",
-                "metaId": "m210913-0001",
-                "edgeId": "ED-000009",
-                "heartBeatStatus": "alive"
+                "UpdateTmsp": "2021/09/26 11:20:30",
+                "MetaID": "m210913-0001",
+                "EdgeID": "ED-000009",
+                "HeartBeatStatus": "alive"
             },
             {
-                "updateTmsp": "2021/09/30 11:20:30",
-                "metaId": "m2109133-0003",
-                "edgeId": "ED-000009",
-                "heartBeatStatus": "N/A"
+                "UpdateTmsp": "2021/09/30 11:20:30",
+                "MetaID": "m2109133-0003",
+                "EdgeID": "ED-000009",
+                "HeartBeatStatus": "N/A"
             },
             {
-                "updateTmsp": "2021/09/26 11:20:30",
-                "metaId": "m2109133-0001",
-                "edgeId": "ED-000009",
-                "heartBeatStatus": "alive"
+                "UpdateTmsp": "2021/09/26 11:20:30",
+                "MetaID": "m2109133-0001",
+                "EdgeID": "ED-000009",
+                "HeartBeatStatus": "alive"
             },
             {
-                "updateTmsp": "2021/09/21 19:20:48",
-                "metaId": "m210910-0002",
-                "edgeId": "ED-000002",
-                "heartBeatStatus": "N/A"
+                "UpdateTmsp": "2021/09/21 19:20:48",
+                "MetaID": "m210910-0002",
+                "EdgeID": "ED-000002",
+                "HeartBeatStatus": "N/A"
             },
             {
-                "updateTmsp": "2021/09/26 11:20:30",
-                "metaId": "m210913-0001",
-                "edgeId": "ED-000009",
-                "heartBeatStatus": "alive"
+                "UpdateTmsp": "2021/09/26 11:20:30",
+                "MetaID": "m210913-0001",
+                "EdgeID": "ED-000009",
+                "HeartBeatStatus": "alive"
             },
             {
-                "updateTmsp": "2021/09/30 11:20:30",
-                "metaId": "m2109133-0003",
-                "edgeId": "ED-000009",
-                "heartBeatStatus": "N/A"
+                "UpdateTmsp": "2021/09/30 11:20:30",
+                "MetaID": "m2109133-0003",
+                "EdgeID": "ED-000009",
+                "HeartBeatStatus": "N/A"
             }
         ],
-        "status": {
-            "totaolEdgeDevice": 9,
-            "alive": 5,
-            "N/A": 4
+        "Status": {
+            "TotaolEdgeDevice": 9,
+            "Alive": 5,
+            "Dead": 4
         },
-        "page": 1,
-        "pageCount": 10,
-        "itemsPerPage": 10
+        "Page": 1,
+        "PageCount": 10,
+        "ItemsPerPage": 10
     }
 }

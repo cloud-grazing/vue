@@ -6,17 +6,17 @@
         </div>
         <v-data-table
             :headers="headers"
-            :items="data.list"
-            :page.sync="data.page"
-            :itemsPerPage="data.itemsPerPage"
+            :items="data.List"
+            :page.sync="data.Page"
+            :ItemsPerPage="data.ItemsPerPage"
             hideDefaultFooter
             class="elevation-1"
-            @page-count="data.pageCount = $event"
+            @page-count="data.PageCount = $event"
         />
         <div class="text-center pt-2">
             <v-pagination
-                v-model="data.page"
-                :length="data.pageCount"
+                v-model="data.Page"
+                :length="data.PageCount"
             />
         </div>
     </div>
@@ -30,29 +30,29 @@ export default {
     data() {
         return {
             headers: [
-                { text: 'data_collect_tmsp  ', value: 'dataCollectTmsp', align: 'center' },
-                { text: 'meta_id', value: 'metaId', align: 'center' },
-                { text: 'edge_id', value: 'edgeId', align: 'center' },
-                { text: 'data_type', value: 'dataType', align: 'center' },
-                { text: 'flow_direction', value: 'flowDirection', align: 'center' }
+                { text: 'data_collect_tmsp  ', value: 'DataCollectTmsp', align: 'center' },
+                { text: 'meta_id', value: 'MetaID', align: 'center' },
+                { text: 'edge_id', value: 'EdgeID', align: 'center' },
+                { text: 'data_type', value: 'DataType', align: 'center' },
+                { text: 'flow_direction', value: 'FlowDirection', align: 'center' }
             ],
             data: {
-                page: 0,
-                pageCount: 0,
-                itemsPerPage: 10,
-                list: [
+                Page: 0,
+                PageCount: 0,
+                ItemsPerPage: 10,
+                List: [
                     {
-                        edgeId: '',
-                        metaId: '',
-                        dataCollectTmsp: '',
-                        dataType: '',
-                        flowDirection: ''
+                        EdgeID: '',
+                        MetaID: '',
+                        DataCollectTmsp: '',
+                        DataType: '',
+                        FlowDirection: ''
                     }
                 ],
-                status: {
-                    totaolRecords: 0,
-                    inbound: 0,
-                    outBound: 0
+                Status: {
+                    TotaolRecords: 0,
+                    Inbound: 0,
+                    OutBound: 0
                 }
             }
 
@@ -60,19 +60,19 @@ export default {
     },
     computed: {
         statusShow() {
-            const { status: { totaolRecords, inbound, outBound } } = this.data;
+            const { Status: { TotaolRecords, Inbound, OutBound } } = this.data;
             const newStatus = [
                 {
                     text: 'Total Records',
-                    value: totaolRecords
+                    value: TotaolRecords
                 },
                 {
                     text: 'Inbound',
-                    value: inbound
+                    value: Inbound
                 },
                 {
                     text: 'Outbound',
-                    value: outBound
+                    value: OutBound
                 }
             ];
             return newStatus;

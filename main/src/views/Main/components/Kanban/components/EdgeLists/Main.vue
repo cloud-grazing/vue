@@ -6,18 +6,18 @@
         </div>
         <v-data-table
             :headers="headers"
-            :items="data.list"
-            :page.sync="data.page"
-            :itemsPerPage="data.itemsPerPage"
+            :items="data.List"
+            :page.sync="data.Page"
+            :itemsPerPage="data.ItemsPerPage"
             hideDefaultFooter
             class="elevation-1"
             :itemClass="itemRowBackground"
-            @page-count="data.pageCount = $event"
+            @page-count="data.PageCount = $event"
         />
         <div class="text-center pt-2">
             <v-pagination
-                v-model="data.page"
-                :length="data.pageCount"
+                v-model="data.Page"
+                :length="data.PageCount"
             />
             <!-- <v-text-field
                 :value="itemsPerPage"
@@ -39,27 +39,27 @@ export default {
     data() {
         return {
             headers: [
-                { text: 'update_tmsp ', value: 'updateTmsp', align: 'center' },
-                { text: 'meta_id', value: 'metaId', align: 'center' },
-                { text: 'edge_id', value: 'edgeId', align: 'center' },
-                { text: 'heart_beat_status', value: 'heartBeatStatus', align: 'center' }
+                { text: 'update_tmsp ', value: 'UpdateTmsp', align: 'center' },
+                { text: 'meta_id', value: 'MetaID', align: 'center' },
+                { text: 'edge_id', value: 'EdgeID', align: 'center' },
+                { text: 'heart_beat_status', value: 'HeartBeatStatus', align: 'center' }
             ],
             data: {
-                page: 1,
-                pageCount: 10,
-                itemsPerPage: 10,
-                list: [
+                Page: 1,
+                PageCount: 10,
+                ItemsPerPage: 10,
+                List: [
                     {
-                        edgeId: '',
-                        metaId: '',
-                        updateTmsp: '',
-                        heartBeatStatus: ''
+                        EdgeID: '',
+                        MetaID: '',
+                        UpdateTmsp: '',
+                        HeartBeatStatus: ''
                     }
                 ],
-                status: {
-                    totaolEdgeDevice: 0,
-                    alive: 0,
-                    'N/A': 0
+                Status: {
+                    TotaolEdgeDevice: 0,
+                    Alive: 0,
+                    Dead: 0
                 }
             }
 
@@ -67,19 +67,19 @@ export default {
     },
     computed: {
         statusShow() {
-            const { status: { totaolEdgeDevice, alive } } = this.data;
+            const { Status: { TotaolEdgeDevice, Alive, Dead } } = this.data;
             const newStatus = [
                 {
                     text: 'Totaol Edge Device',
-                    value: totaolEdgeDevice
+                    value: TotaolEdgeDevice
                 },
                 {
                     text: 'alive',
-                    value: alive
+                    value: Alive
                 },
                 {
                     text: 'N/A',
-                    value: this.data.status['N/A']
+                    value: Dead
                 }
             ];
             return newStatus;

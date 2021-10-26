@@ -1,22 +1,119 @@
 {
     "code": 200,
     "data": {
-        "list": [
+        "List": [
             {
-                "taskId": "t210929-01574",
-                "project": "CL_color_burrs",
-                "modelName": "object detection",
-                "status": "training(success)",
-                "step": "4/5",
-                "creatingTime": "2021-09-29 23:35:14",
-                "creatingUser": "haix.yeh@gmail.com"
+                "TaskID": "t210929-01574",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01575",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01576",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01577",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01578",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01579",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01580",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01581",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01582",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01583",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-01584",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
+            },
+            {
+                "TaskID": "t210929-0157485",
+                "Project": "CL_color_burrs",
+                "ModelName": "object detection",
+                "Status": "training(success)",
+                "Step": "4/5",
+                "CreatingTime": "2021-09-29 23:35:14",
+                "CreatingUser": "haix.yeh@gmail.com"
             }
         ],
-        "pagination": {
-            "page": 1,
-            "pageCount": 10,
-            "total": 260
-        }
+        "Page": 1,
+        "PageCount": 10,
+        "ItemsPerPage": 10
     },
     "msg": ""
 }

@@ -59,3 +59,4 @@ export default {
 <style lang="scss">
 </style>
 <style src="@/css/common.scss" lang="scss"></style>
+<style src="@/css/normalTable.scss" lang="scss"></style>

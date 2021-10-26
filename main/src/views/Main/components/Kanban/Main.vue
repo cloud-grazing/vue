@@ -14,4 +14,3 @@ export default {
 <style scoped lang="scss">
 
 </style>
-<style src="@/css/normalTable.scss" lang="scss"></style>

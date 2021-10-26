@@ -92,9 +92,6 @@ export default {
     methods: {
         itemRowBackground(item) {
             return item.heartBeatStatus === 'N/A' && 'tr-red';
-        },
-        camalize(str) {
-            return str.toLowerCase().replace(/[^a-zA-Z0-9]+(.)/g, (m, chr) => chr.toLocaleUpperCase());
         }
     }
 };

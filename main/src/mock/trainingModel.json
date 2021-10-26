@@ -1,14 +1,14 @@
 {
     "code": 200,
     "data": {
-        "datasetId": "d200921-002",
-        "batchSize": 8,
-        "learningRate": 0.0001,
-        "epoch": 100,
-        "perEpoch": 0,
-        "scale": 0,
-        "featureExtract": true,
-        "device": "GPU",
+        "DatasetId": "d200921-002",
+        "BatchSize": 8,
+        "LearningRate": 0.0001,
+        "Epoch": 100,
+        "PerEpoch": 0,
+        "Scale": 0,
+        "FeatureExtract": true,
+        "Device": "GPU",
         "CpuId": 0,
         "TrainRatio": 0.8
     },

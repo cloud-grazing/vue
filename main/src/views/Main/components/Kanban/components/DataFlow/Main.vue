@@ -18,14 +18,6 @@
                 v-model="data.page"
                 :length="data.pageCount"
             />
-            <!-- <v-text-field
-                :value="itemsPerPage"
-                label="Items per page"
-                type="number"
-                min="-1"
-                max="15"
-                @input="itemsPerPage = parseInt($event, 10)"
-            /> -->
         </div>
     </div>
 </template>
@@ -45,29 +37,22 @@ export default {
                 { text: 'flow_direction', value: 'flowDirection', align: 'center' }
             ],
             data: {
-                page: 1,
-                pageCount: 10,
+                page: 0,
+                pageCount: 0,
                 itemsPerPage: 10,
                 list: [
                     {
-                        edgeId: 'ED-000009',
-                        metaId: 'm2109133-0001',
-                        dataCollectTmsp: '2021/09/26 11:20:30',
-                        dataType: 'json',
-                        flowDirection: 'm2109133-0001'
-                    },
-                    {
-                        edgeId: 'ED-000002',
-                        metaId: 'm2109133-0002',
-                        dataCollectTmsp: '2021/09/26 11:20:30',
-                        dataType: 'json',
-                        flowDirection: 'm2109133-0001'
+                        edgeId: '',
+                        metaId: '',
+                        dataCollectTmsp: '',
+                        dataType: '',
+                        flowDirection: ''
                     }
                 ],
                 status: {
-                    totaolRecords: 25,
-                    inbound: 124,
-                    outBound: 20
+                    totaolRecords: 0,
+                    inbound: 0,
+                    outBound: 0
                 }
             }
 

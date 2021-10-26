@@ -39,12 +39,6 @@ export default {
     data() {
         return {
             headers: [
-                // {
-                //     text: 'Dessert (100g serving)',
-                //     align: 'start',
-                //     sortable: false,
-                //     value: 'name'
-                // },
                 { text: 'update_tmsp ', value: 'updateTmsp', align: 'center' },
                 { text: 'meta_id', value: 'metaId', align: 'center' },
                 { text: 'edge_id', value: 'edgeId', align: 'center' },
@@ -56,22 +50,16 @@ export default {
                 itemsPerPage: 10,
                 list: [
                     {
-                        edgeId: 'ED-000009',
-                        metaId: 'm2109133-0001',
-                        updateTmsp: '2021/09/26 11:20:30',
-                        heartBeatStatus: 'alive'
-                    },
-                    {
-                        edgeId: 'ED-000002',
-                        metaId: 'm2109133-0002',
-                        updateTmsp: '2021/09/26 11:20:30',
-                        heartBeatStatus: 'N/A'
+                        edgeId: '',
+                        metaId: '',
+                        updateTmsp: '',
+                        heartBeatStatus: ''
                     }
                 ],
                 status: {
-                    totaolEdgeDevice: 9,
-                    alive: 5,
-                    'N/A': 4
+                    totaolEdgeDevice: 0,
+                    alive: 0,
+                    'N/A': 0
                 }
             }
 

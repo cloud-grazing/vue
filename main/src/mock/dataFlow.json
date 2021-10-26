@@ -4,10 +4,38 @@
         "list": [
             {
                 "dataCollectTmsp": "2021/09/26 11:20:30",
-                "metaId": "m2109133-0001",
+                "metaId": "m210913-0001",
                 "edgeId": "ED-000009",
                 "dataType": "json",
                 "flowDirection": "inbound"
+            },
+            {
+                "dataCollectTmsp": "2021/09/26 11:00:29",
+                "metaId": "m210920-0211",
+                "edgeId": "ED-000001",
+                "dataType": "json",
+                "flowDirection": "inbound"
+            },
+            {
+                "dataCollectTmsp": "2021/09/26 11:20:30",
+                "metaId": "m210913-0001",
+                "edgeId": "ED-000009",
+                "dataType": "json",
+                "flowDirection": "inbound"
+            },
+            {
+                "dataCollectTmsp": "2021/09/26 11:00:29",
+                "metaId": "m210920-0211",
+                "edgeId": "ED-000001",
+                "dataType": "streaming",
+                "flowDirection": "inbound"
+            },
+            {
+                "dataCollectTmsp": "2021/09/26 11:20:30",
+                "metaId": "m210913-0001",
+                "edgeId": "ED-000009",
+                "dataType": "streaming",
+                "flowDirection": "outbound"
             }
         ],
         "status": {
@@ -15,10 +43,8 @@
             "inbound": 124,
             "outBound": 20
         },
-        "pagination": {
-            "page": 1,
-            "pageCount": 10,
-            "total": 260
-        }
+        "page": 1,
+        "pageCount": 10,
+        "itemsPerPage": 10
     }
 }

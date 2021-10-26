@@ -1,0 +1,23 @@
+.use-normal-table {
+    margin: 0 auto;
+    max-width: 800px;
+    color: #707070;
+    .v-data-table__wrapper {
+        box-shadow: 0px 0px 4px 0px #A0A0A0;
+    }
+    .v-data-table {
+        color: #3D3D3D;
+        .v-data-table-header th {
+            font-size: 16px;
+            font-weight: bold;
+        }
+    }
+    .tr-red {
+        background-color: #EFC1C2;
+    }
+    .v-pagination  {
+        button {
+            box-shadow: 0px 0px 2px 1px rgb(66 35 35 / 45%);
+        }
+    }
+}

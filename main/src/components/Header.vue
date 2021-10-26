@@ -132,7 +132,7 @@ export default {
 <style scoped lang="scss">
 .header {
     padding: 0 20px;
-    background: #1d5ba2;
+    background: #4A71B2;
     color: #FFF;
     .company {
         max-width: 250px;

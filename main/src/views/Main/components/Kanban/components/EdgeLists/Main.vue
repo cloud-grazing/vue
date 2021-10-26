@@ -1,5 +1,5 @@
 <template>
-    <div class="edge-tabel">
+    <div class="edge-lists use-normal-table">
         <div v-for="(item, index) in statusShow" :key="index" class="text-block">
             <div class="tip-title">{{ item['text'] }}</div>
             <div class="tip-number">{{ item['value'] }}</div>
@@ -114,14 +114,11 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
-    .edge-tabel {
-        margin: 0 auto;
-        max-width: 800px;
-        color: #707070;
+    .edge-lists {
         .text-block {
             display: inline-block;
             vertical-align: middle;
-            width: 33%;
+            width: 33.3%;
             text-align: center;
             font-weight: bold;
             .tip-title {
@@ -142,27 +139,4 @@ export default {
             }
         }
     }
-</style>
-
-<style lang="scss">
-.edge-tabel {
-    .v-data-table__wrapper {
-         box-shadow: 0px 0px 4px 0px #A0A0A0;
-    }
-    .v-data-table {
-        color: #3D3D3D;
-         .v-data-table-header th {
-             font-size: 16px;
-             font-weight: bold;
-        }
-    }
-    .tr-red {
-        background-color: #EFC1C2;
-    }
-    .v-pagination  {
-        button {
-            box-shadow: 0px 0px 2px 1px rgb(66 35 35 / 45%);
-        }
-    }
-}
 </style>

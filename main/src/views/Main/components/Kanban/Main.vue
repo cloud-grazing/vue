@@ -1,18 +1,12 @@
 <template>
     <div class="kanban">
-        <h1>{{ msg }}</h1>
         <router-view />
     </div>
 </template>
 
 <script>
 export default {
-    name: 'Kanban',
-    data() {
-        return {
-            msg: 'Kanban'
-        };
-    }
+    name: 'Kanban'
 };
 </script>
 
@@ -20,3 +14,4 @@ export default {
 <style scoped lang="scss">
 
 </style>
+<style src="@/css/normalTable.scss" lang="scss"></style>

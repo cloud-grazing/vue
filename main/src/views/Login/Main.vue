@@ -13,8 +13,8 @@
                         </div>
                     </div>
                 </div>
-                <div class="login-form">
-                    <div class="login-form-wrap">
+                <div class="login-from">
+                    <div class="login-from-wrap">
                         <img src="@/assets/LEDALogo.png" alt="" srcset="" width="320" />
                         <p>SPACE Log In</p>
                         <div>
@@ -34,7 +34,7 @@
 </template>
 
 <script>
-import { mapState } form 'vuex';
+import { mapState } from 'vuex';
 
 export default {
     name: 'Main',
@@ -71,7 +71,7 @@ export default {
 .login-wrap {
     width: 100%;
     height: 100%;
-    .login-form {
+    .login-from {
         height: 100%;
         &::before {
             display: inline-block;
@@ -80,7 +80,7 @@ export default {
             width: 0px;
             height: 100%;
         }
-        .login-form-wrap {
+        .login-from-wrap {
             display: inline-block;
             vertical-align: center;
             margin: 0 auto;
@@ -112,7 +112,7 @@ export default {
         }
     }
 
-    .login-form {
+    .login-from {
         float: left;
         width: 520px;
     }

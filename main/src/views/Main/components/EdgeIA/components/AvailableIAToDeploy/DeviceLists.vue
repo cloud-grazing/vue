@@ -28,7 +28,7 @@
 </template>
 
 <script>
-import modelLists from '@/mock/modelLists';
+import deviceList from '@/mock/deviceList';
 
 export default {
     name: 'DeviceList',
@@ -37,9 +37,9 @@ export default {
             checkedID: null,
             headers: [
                 { text: 'check ', value: 'Check', align: 'center' },
-                { text: 'training_finished', value: 'TrainingFinished', align: 'center' },
-                { text: 'model_category', value: 'ModelCategory', align: 'center' },
-                { text: 'model_id', value: 'ModelID', align: 'center' }
+                { text: 'IA Device ID', value: 'IA_DeviceID', align: 'center' },
+                { text: 'IA Location', value: 'IA_Location', align: 'center' },
+                { text: 'model existed?', value: 'ModelExisted', align: 'center' }
             ],
             data: {
                 Page: 1,
@@ -47,10 +47,10 @@ export default {
                 ItemsPerPage: 10,
                 List: [
                     {
-                        ID: 0,
-                        TrainingFinished: '',
-                        ModelCategory: '',
-                        ModelID: ''
+                        ID: null,
+                        IA_DeviceID: '',
+                        IA_Location: '',
+                        ModelExisted: ''
                     }
                 ],
                 Status: {
@@ -65,8 +65,8 @@ export default {
     computed: {
     },
     created() {
-        console.log(modelLists, 'modelLists');
-        this.data = { ...this.data, ...modelLists.data };
+        console.log(deviceList, 'deviceList');
+        this.data = { ...this.data, ...deviceList.data };
     },
     methods: {
         itemRowBackground(item) {

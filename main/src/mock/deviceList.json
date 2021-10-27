@@ -1,0 +1,69 @@
+{
+    "code": 200,
+    "data": {
+        "List": [
+            {
+                "ID": 1,
+                "IA_DeviceID": "Jetson-01",
+                "IA_Location": "FAB2",
+                "ModelExisted": "New"
+            },
+            {
+                "ID": 2,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB5",
+                "ModelExisted": "New"
+            },
+            {
+                "ID": 3,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB5",
+                "ModelExisted": "New"
+            },
+            {
+                "ID": 4,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB5",
+                "ModelExisted": "obj-det-001"
+            },
+            {
+                "ID": 5,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB5",
+                "ModelExisted": "obj-det-001"
+            },
+            {
+                "ID": 6,
+                "IA_DeviceID": "Jetson-nano-001",
+                "IA_Location": "FAB2",
+                "ModelExisted": "seg-001"
+            },
+            {
+                "ID": 7,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB5",
+                "ModelExisted": "seg-001"
+            },
+            {
+                "ID": 8,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB5",
+                "ModelExisted": "cls-001"
+            },
+            {
+                "ID": 9,
+                "IA_DeviceID": "SPACE-Virtual-IA-01",
+                "IA_Location": "FAB2",
+                "ModelExisted": "cls-001"
+            }
+        ],
+        "Status": {
+            "TotaolEdgeDevice": 9,
+            "Alive": 5,
+            "Dead": 4
+        },
+        "Page": 1,
+        "PageCount": 10,
+        "ItemsPerPage": 10
+    }
+}

@@ -1,0 +1,69 @@
+{
+    "code": 200,
+    "data": {
+        "List": [
+            {
+                "ID": 1,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "classification",
+                "ModelID": "cls-001"
+            },
+            {
+                "ID": 2,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "object detection",
+                "ModelID": "obj-det-001"
+            },
+            {
+                "ID": 3,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "object detection",
+                "ModelID": "obj-det-001"
+            },
+            {
+                "ID": 4,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "object detection",
+                "ModelID": "obj-det-001"
+            },
+            {
+                "ID": 5,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "object detection",
+                "ModelID": "obj-det-001"
+            },
+            {
+                "ID": 6,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "classification",
+                "ModelID": "seg-001"
+            },
+            {
+                "ID": 7,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "segmentation",
+                "ModelID": "seg-001"
+            },
+            {
+                "ID": 8,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "segmentation",
+                "ModelID": "cls-001"
+            },
+            {
+                "ID": 9,
+                "TrainingFinished": "2021/09/26 11:20:30",
+                "ModelCategory": "classification",
+                "ModelID": "cls-001"
+            }
+        ],
+        "Status": {
+            "TotaolEdgeDevice": 9,
+            "Alive": 5,
+            "Dead": 4
+        },
+        "Page": 1,
+        "PageCount": 10,
+        "ItemsPerPage": 10
+    }
+}

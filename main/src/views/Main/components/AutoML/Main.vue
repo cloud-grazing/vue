@@ -1,18 +1,12 @@
 <template>
     <div class="auto-ml">
-        <h1>{{ msg }}</h1>
         <router-view />
     </div>
 </template>
 
 <script>
 export default {
-    name: 'AutoML',
-    data() {
-        return {
-            msg: 'AutoML'
-        };
-    }
+    name: 'AutoML'
 };
 </script>
 

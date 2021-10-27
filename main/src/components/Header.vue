@@ -1,6 +1,6 @@
 <template>
     <v-system-bar app height="60" class="header">
-        <v-app-bar-nav-icon @click="controlDrawer" />
+        <v-app-bar-nav-icon v-if="login" @click="controlDrawer" />
         <img src="@/assets/logo.png" alt="" width="50" />
         <div class="company">
             <span class="first">S P A C E</span>

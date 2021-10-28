@@ -12,32 +12,32 @@
             hideDefaultFooter
             class="elevation-1"
             :itemClass="itemRowBackground"
-            @page-count="data.PageCount = $event"
-        />
+            @page-count="data.Total = $event"
+        >
+            <template v-slot:[`item.HeartBeatStatus`]="{ item }">
+                <span v-if="item.HeartBeatStatus === 1">alive</span>
+                <span v-else>N/A</span>
+            </template>
+        </v-data-table>
         <div class="text-center pt-2">
             <v-pagination
-                v-model="data.Page"
-                :length="data.PageCount"
+                v-model="Page"
+                :length="TotalPage"
             />
-            <!-- <v-text-field
-                :value="itemsPerPage"
-                label="Items per page"
-                type="number"
-                min="-1"
-                max="15"
-                @input="itemsPerPage = parseInt($event, 10)"
-            /> -->
         </div>
     </div>
 </template>
 
 <script>
-import edgeList from '@/mock/edgeList';
+import axios from 'axios';
 
 export default {
     name: 'EdgeLists',
     data() {
         return {
+            Page: 1,
+            TotalPage: 1,
+            PerPage: 10, // 當頁筆數
             headers: [
                 { text: 'update_tmsp ', value: 'UpdateTmsp', align: 'center' },
                 { text: 'meta_id', value: 'MetaID', align: 'center' },
@@ -46,8 +46,8 @@ export default {
             ],
             data: {
                 Page: 1,
-                PageCount: 10,
-                ItemsPerPage: 10,
+                Total: 10,
+                PerPage: 10,
                 List: [
                     {
                         EdgeID: '',
@@ -57,7 +57,7 @@ export default {
                     }
                 ],
                 Status: {
-                    TotaolEdgeDevice: 0,
+                    Total: 0,
                     Alive: 0,
                     Dead: 0
                 }
@@ -67,11 +67,11 @@ export default {
     },
     computed: {
         statusShow() {
-            const { Status: { TotaolEdgeDevice, Alive, Dead } } = this.data;
+            const { Status: { Alive, Dead }, Total } = this.data;
             const newStatus = [
                 {
                     text: 'Totaol Edge Device',
-                    value: TotaolEdgeDevice
+                    value: Total
                 },
                 {
                     text: 'alive',
@@ -85,13 +85,35 @@ export default {
             return newStatus;
         }
     },
+    watch: {
+        Page() {
+            this.getEdgeList();
+        }
+    },
     created() {
-        console.log(edgeList, 'edgeList');
-        this.data = { ...this.data, ...edgeList.data };
+        this.getEdgeList();
     },
     methods: {
         itemRowBackground(item) {
-            return item.heartBeatStatus === 'N/A' && 'tr-red';
+            return item.HeartBeatStatus === 2 && 'tr-red';
+        },
+        getEdgeList() {
+            axios.get('/api/edge-list', {
+                params: {
+                    PerPage: this.PerPage,
+                    Page: this.Page
+                }
+            }).then((response) => {
+                const res = response.data;
+                if (res.msg !== 'OK') {
+                    alert(res.msg || 'api發生異常');
+                    return;
+                }
+                this.data = { ...this.data, ...res.data };
+                this.TotalPage = Math.ceil(this.data.Total / this.data.PerPage);
+            }).catch((error) => {
+                console.log(error);
+            });
         }
     }
 };

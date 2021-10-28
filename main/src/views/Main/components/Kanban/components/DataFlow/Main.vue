@@ -15,20 +15,23 @@
         />
         <div class="text-center pt-2">
             <v-pagination
-                v-model="data.Page"
-                :length="data.PageCount"
+                v-model="Page"
+                :length="TotalPage"
             />
         </div>
     </div>
 </template>
 
 <script>
-import dataFlow from '@/mock/dataFlow';
+import axios from 'axios';
 
 export default {
     name: 'DataFlow',
     data() {
         return {
+            Page: 1,
+            TotalPage: 1,
+            PerPage: 10, // 當頁筆數
             headers: [
                 { text: 'data_collect_tmsp  ', value: 'DataCollectTmsp', align: 'center' },
                 { text: 'meta_id', value: 'MetaID', align: 'center' },
@@ -37,9 +40,9 @@ export default {
                 { text: 'flow_direction', value: 'FlowDirection', align: 'center' }
             ],
             data: {
-                Page: 0,
-                PageCount: 0,
-                ItemsPerPage: 10,
+                Page: 1,
+                Total: 10,
+                PerPage: 10,
                 List: [
                     {
                         EdgeID: '',
@@ -60,11 +63,11 @@ export default {
     },
     computed: {
         statusShow() {
-            const { Status: { TotaolRecords, Inbound, OutBound } } = this.data;
+            const { Status: { Inbound, OutBound }, Total } = this.data;
             const newStatus = [
                 {
                     text: 'Total Records',
-                    value: TotaolRecords
+                    value: Total
                 },
                 {
                     text: 'Inbound',
@@ -78,9 +81,33 @@ export default {
             return newStatus;
         }
     },
+    watch: {
+        Page() {
+            this.getDataFlow();
+        }
+    },
     created() {
-        console.log(dataFlow, 'edgeList');
-        this.data = { ...this.data, ...dataFlow.data };
+        this.getDataFlow();
+    },
+    methods: {
+        getDataFlow() {
+            axios.get('/api/data-flow', {
+                params: {
+                    PerPage: this.PerPage,
+                    Page: this.Page
+                }
+            }).then((response) => {
+                const res = response.data;
+                if (res.msg !== 'OK') {
+                    alert(res.msg || 'api發生異常');
+                    return;
+                }
+                this.data = { ...this.data, ...res.data };
+                this.TotalPage = Math.ceil(this.data.Total / this.data.PerPage);
+            }).catch((error) => {
+                console.log(error);
+            });
+        }
     }
 };
 </script>

@@ -14,15 +14,15 @@ const headers = {
 };
 
 const proxyConfig = {
-    target: 'http://test.com/', // 測試網頁
+    target: 'http://localhost:8000/', // 測試網頁
     headers,
     changeOrigin: true,
     ws: false
 };
 
 module.exports = {
-    '/fake': {
+    '/api': {
         ...proxyConfig,
-        target: 'http://test.com/'
+        target: 'http://localhost:8000/'
     }
 };

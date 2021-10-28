@@ -5,7 +5,7 @@ import AutoML from './components/AutoML';
 export default {
     path: '/',
     name: 'Main',
-    redirect: '/kanban',
+    redirect: '/login',
     component: () => import('./Main'),
     children: [
         Kanban,

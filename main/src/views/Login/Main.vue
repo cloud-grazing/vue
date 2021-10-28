@@ -17,15 +17,31 @@
                     <div class="login-from-wrap">
                         <img src="@/assets/LEDALogo.png" alt="" srcset="" width="320" />
                         <p>SPACE Log In</p>
-                        <div>
-                            <v-btn
-                                color="primary"
-                                elevation="2"
-                                xLarge
-                            >
-                                Login
-                            </v-btn>
-                        </div>
+                        <v-form>
+                            <v-container>
+                                <v-text-field
+                                    outlined
+                                    label="Account"
+                                    prependInnerIcon="mdi-account"
+                                />
+                                <v-text-field
+                                    outlined
+                                    label="Password"
+                                    :type="passwordType"
+                                    prependInnerIcon="mdi-lock-outline"
+                                    :appendIcon="eyeIcon"
+                                    @click:append="togglePasswordType"
+                                />
+                                <v-btn
+                                    class="login-btn"
+                                    color="primary"
+                                    elevation="2"
+                                    @click="login"
+                                >
+                                    Login
+                                </v-btn>
+                            </v-container>
+                        </v-form>
                     </div>
                 </div>
             </div>
@@ -43,6 +59,9 @@ export default {
     },
     data() {
         return {
+            hidePassword: true,
+            passwordType: 'password',
+            eyeIcon: 'mdi-eye-off',
             drawer: null,
             breadcrumbs: [
                 {
@@ -63,6 +82,15 @@ export default {
     created() {
     },
     methods: {
+        login() {
+            this.$router.push({ path: 'kanban' });
+        },
+        togglePasswordType(val) {
+            console.log(val);
+            this.hidePassword = !this.hidePassword;
+            this.passwordType = this.hidePassword ? 'password' : 'text';
+            this.eyeIcon = this.hidePassword ? 'mdi-eye-off' : 'mdi-eye';
+        }
     }
 };
 </script>
@@ -82,7 +110,7 @@ export default {
         }
         .login-from-wrap {
             display: inline-block;
-            vertical-align: center;
+            vertical-align: middle;
             margin: 0 auto;
             width: 320px;
         }
@@ -115,6 +143,9 @@ export default {
     .login-from {
         float: left;
         width: 520px;
+        .login-btn {
+            width: 100%;
+        }
     }
 </style>
 <style src="@/css/common.scss" lang="scss"></style>

@@ -14,10 +14,29 @@
             </v-breadcrumbs>
             <v-spacer />
             <div class="user">
-                <v-icon v-if="handelHeaderHide" large color="while">
-                    mdi-account
-                </v-icon>
-                {{ user }}
+                <a class="email-link" @click="toggleUserList">
+                    <div>
+                        <v-icon v-if="handelHeaderHide" large color="while">
+                            mdi-account
+                        </v-icon>
+                        {{ user }}
+                    </div>
+                </a>
+
+                <div v-show="showUserList" class="user-list">
+                    <div class="pa-2">
+                        <v-btn
+                            block
+                            dark
+                            @click="() => { $router.push({ path: 'login' }) }"
+                        >
+                            <v-icon large color="while">
+                                mdi-logout
+                            </v-icon>
+                            Logout
+                        </v-btn>
+                    </div>
+                </div>
             </div>
         </template>
     </v-system-bar>
@@ -48,6 +67,7 @@ export default {
     },
     data() {
         return {
+            showUserList: false,
             breadcrumbs: [
                 {
                     text: 'test',
@@ -124,6 +144,9 @@ export default {
         },
         controlDrawer() {
             this.$emit('controlDrawer', !this.drawer);
+        },
+        toggleUserList() {
+            this.showUserList = !this.showUserList;
         }
     }
 };
@@ -147,6 +170,20 @@ export default {
         }
         .second {
             line-height: 12px;
+        }
+    }
+    .user {
+        position: relative;
+        .email-link {
+            color: #FFF;
+        }
+        .user-list {
+            position: absolute;
+            left: 0;
+            // width: 130px;
+            // border: 1px solid #828282;
+            // box-shadow: 0px 0px 4px 0px #a0a0a0;
+            // background: #FFF;
         }
     }
 }

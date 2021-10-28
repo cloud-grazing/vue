@@ -36,23 +36,11 @@
                 </v-list-item-content>
             </v-list-item>
         </v-list>
-        <template v-slot:append>
-            <div class="pa-2">
-                <v-btn
-                    block
-                    dark
-                    @click="() => { $router.push({ path: 'login' }) }"
-                >
-                    Logout
-                </v-btn>
-            </div>
-        </template>
     </v-navigation-drawer>
 </template>
 
 <script>
 import { mapState } from 'vuex';
-// import Header from '@/components/Header';
 
 export default {
     name: 'MainNav',

@@ -14,7 +14,7 @@
             @page-count="data.PageCount = $event"
         >
             <template v-slot:[`item.DataCollectTmsp`]="{ item }">
-                {{ new Date(item.DataCollectTmsp) }}
+                {{ timeFormat(item.DataCollectTmsp) }}
             </template>
         </v-data-table>
         <div class="text-center pt-2">
@@ -28,6 +28,7 @@
 
 <script>
 import axios from 'axios';
+import moment from 'moment';
 
 export default {
     name: 'DataFlow',
@@ -111,6 +112,9 @@ export default {
             }).catch((error) => {
                 console.log(error);
             });
+        },
+        timeFormat(tiem) {
+            return moment(tiem).format('YYYY-MM-DD HH:mm:ss');
         }
     }
 };

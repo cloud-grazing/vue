@@ -15,7 +15,7 @@
             @page-count="data.Total = $event"
         >
             <template v-slot:[`item.UpdateTmsp`]="{ item }">
-                {{ new Date(item.UpdateTmsp) }}
+                {{ timeFormat(item.UpdateTmsp) }}
             </template>
             <template v-slot:[`item.HeartBeatStatus`]="{ item }">
                 <span v-if="item.HeartBeatStatus === 1">alive</span>
@@ -33,6 +33,7 @@
 
 <script>
 import axios from 'axios';
+import moment from 'moment';
 
 export default {
     name: 'EdgeLists',
@@ -117,6 +118,9 @@ export default {
             }).catch((error) => {
                 console.log(error);
             });
+        },
+        timeFormat(tiem) {
+            return moment(tiem).format('YYYY-MM-DD HH:mm:ss');
         }
     }
 };

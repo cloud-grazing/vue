@@ -2,7 +2,7 @@
     <v-app id="inspire">
         <Header :login="false" />
         <v-main>
-            <div class="login-wrap clearfix">
+            <div class="login-wrap">
                 <div class="login-left-bg">
                     <div class="sohw-text">
                         <div class="login-title">

@@ -2,7 +2,7 @@
     <v-app id="inspire">
         <Header :login="false" />
         <v-main>
-            <div class="login-wrap">
+            <div class="login-wrap clearfix">
                 <div class="login-left-bg">
                     <div class="sohw-text">
                         <div class="login-title">
@@ -119,7 +119,7 @@ export default {
         float: left;
         width: calc(100% - 520px);
         height: 100%;
-        background: url("../../assets/space-and-new-star-1370X996.png") 50% 50% no-repeat;
+        background: url("../../assets/space-and-new-star-1370X996.png") 50% 50% no-repeat #040713;
         &::before {
             display: inline-block;
             vertical-align: middle;

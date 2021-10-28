@@ -35,6 +35,7 @@
                                 <v-btn
                                     class="login-btn"
                                     color="primary"
+                                    xLarge
                                     elevation="2"
                                     @click="login"
                                 >
@@ -85,8 +86,7 @@ export default {
         login() {
             this.$router.push({ path: 'kanban' });
         },
-        togglePasswordType(val) {
-            console.log(val);
+        togglePasswordType() {
             this.hidePassword = !this.hidePassword;
             this.passwordType = this.hidePassword ? 'password' : 'text';
             this.eyeIcon = this.hidePassword ? 'mdi-eye-off' : 'mdi-eye';

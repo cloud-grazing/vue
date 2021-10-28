@@ -14,6 +14,9 @@
             :itemClass="itemRowBackground"
             @page-count="data.Total = $event"
         >
+            <template v-slot:[`item.UpdateTmsp`]="{ item }">
+                {{ new Date(item.UpdateTmsp) }}
+            </template>
             <template v-slot:[`item.HeartBeatStatus`]="{ item }">
                 <span v-if="item.HeartBeatStatus === 1">alive</span>
                 <span v-else>N/A</span>

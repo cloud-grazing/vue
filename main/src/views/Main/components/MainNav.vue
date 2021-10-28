@@ -8,34 +8,45 @@
         mobileBreakpoint="960"
     >
         <v-list
-            class="pl-5"
+            class="pl-3 nav-list"
             shaped
         >
             <v-list-item>
                 <v-list-item-content>
                     <router-link to="/kanban">
-                        <div><img src="@/assets/KANBAN-300X300.png" alt="" width="50" /></div>
-                        KANBAN
+                        <div><img src="@/assets/KANBAN-300X300.png" alt="" width="45" /></div>
+                        <div class="nav-word">KANBAN</div>
                     </router-link>
                 </v-list-item-content>
             </v-list-item>
             <v-list-item>
                 <v-list-item-content>
                     <router-link to="/autoML">
-                        <div><img src="@/assets/autoML-300X300.png" alt="" width="50" /></div>
-                        AutoML
+                        <div><img src="@/assets/autoML-300X300.png" alt="" width="45" /></div>
+                        <div class="nav-word">AutoML</div>
                     </router-link>
                 </v-list-item-content>
             </v-list-item>
             <v-list-item>
                 <v-list-item-content>
                     <router-link to="/edgeia">
-                        <div><img src="@/assets/edge-IA-300X300.png" alt="" width="50" /></div>
-                        Edge IA
+                        <div><img src="@/assets/edge-IA-300X300.png" alt="" width="45" /></div>
+                        <div class="nav-word">Edge IA</div>
                     </router-link>
                 </v-list-item-content>
             </v-list-item>
         </v-list>
+        <template v-slot:append>
+            <div class="pa-2">
+                <v-btn
+                    block
+                    dark
+                    @click="() => { $router.push({ path: 'login' }) }"
+                >
+                    Logout
+                </v-btn>
+            </div>
+        </template>
     </v-navigation-drawer>
 </template>
 
@@ -83,7 +94,18 @@ export default {
 
 <style lang="scss">
 .main-nav {
-    box-shadow: 0px 0px 5px 0px #a0a0a0;
+    box-shadow: 0px 0px 5px 0px #A0A0A0;
+    background: #FFF;
+    .nav-list {
+        a {
+            font-weight: bold;
+            color: #707070;
+            text-decoration: none;
+            .nav-word {
+                margin-top: 5px;
+            }
+        }
+    }
 }
 </style>
 <style src="@/css/common.scss" lang="scss"></style>

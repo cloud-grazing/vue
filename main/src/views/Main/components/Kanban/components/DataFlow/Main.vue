@@ -12,7 +12,11 @@
             hideDefaultFooter
             class="elevation-1"
             @page-count="data.PageCount = $event"
-        />
+        >
+            <template v-slot:[`item.DataCollectTmsp`]="{ item }">
+                {{ new Date(item.DataCollectTmsp) }}
+            </template>
+        </v-data-table>
         <div class="text-center pt-2">
             <v-pagination
                 v-model="Page"

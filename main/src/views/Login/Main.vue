@@ -115,8 +115,6 @@ export default {
             width: 320px;
         }
     }
-
-}
     .login-left-bg {
         float: left;
         width: calc(100% - 520px);
@@ -147,5 +145,7 @@ export default {
             width: 100%;
         }
     }
+}
+
 </style>
 <style src="@/css/common.scss" lang="scss"></style>

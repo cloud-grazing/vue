@@ -2,7 +2,10 @@
     <v-app id="inspire">
         <Header :login="false" />
         <v-main>
-            <div class="login-wrap clearfix">
+            <div
+                class="login-wrap clearfix"
+                :class="[appClass]"
+            >
                 <div class="login-left-bg">
                     <div class="sohw-text">
                         <div class="login-title">
@@ -76,9 +79,10 @@ export default {
     computed: {
         ...mapState([
             'data'
-        ])
-    },
-    watch: {
+        ]),
+        appClass() {
+            return this.headelAppRWD(this.$vuetify.breakpoint.name);
+        }
     },
     created() {
     },
@@ -90,6 +94,15 @@ export default {
             this.hidePassword = !this.hidePassword;
             this.passwordType = this.hidePassword ? 'password' : 'text';
             this.eyeIcon = this.hidePassword ? 'mdi-eye-off' : 'mdi-eye';
+        },
+        headelAppRWD(breakpointName) {
+            const appClass = ['xs', 'sm', 'md', 'lg', 'xl'];
+            console.log(appClass.includes(breakpointName), 'qweqwe');
+            if (appClass.includes(breakpointName)) {
+                return `login-${breakpointName}`;
+            }
+
+            return '';
         }
     }
 };
@@ -134,7 +147,7 @@ export default {
         vertical-align: middle;
         color: #FFF;
         .login-title {
-            font-size: 48px;
+            font-size: 2.4em;
         }
     }
 
@@ -143,6 +156,22 @@ export default {
         width: 520px;
         .login-btn {
             width: 100%;
+        }
+    }
+    &.login-xs,
+    &.login-sm,
+    &.login-md {
+        .login-left-bg {
+            display: block;
+            width: 100%;
+            height: 200px;
+        }
+        .login-from {
+            display: block;
+            padding-top: 40px;
+            width: 100%;
+            height: auto;
+            // height: calc(100% -260);
         }
     }
 }

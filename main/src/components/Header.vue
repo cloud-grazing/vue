@@ -82,21 +82,6 @@ export default {
             return this.headelHide(this.$vuetify.breakpoint.name);
         }
     },
-    watch: {
-        $route(route) {
-            this.routerBread(route);
-        },
-        $vuetify: {
-            breakpoint: {
-                handler(breakpoint) {
-                    this.handelHeaderHide = this.headelHide(breakpoint);
-                },
-                deep: true,
-                immediate: true
-            }
-
-        }
-    },
     created() {
         this.routerBread(this.$route);
     },
@@ -122,13 +107,6 @@ export default {
         },
         headelHide(breakpointName) {
             let show = true;
-            // switch (breakpointName) {
-            //     case 'xs': return 220;
-            //     case 'sm': return 400;
-            //     case 'md': return 500;
-            //     case 'lg': return 600;
-            //     case 'xl': return 800;
-            // }
             switch (breakpointName) {
                 case 'lg':
                     show = true;
@@ -164,7 +142,7 @@ export default {
             display: inline-block;
         }
         .first {
-            font-size: 23px;
+            font-size: 1.5em;
             font-weight: bold;
             line-height: 25px;
         }
@@ -194,12 +172,12 @@ export default {
         &.bread {
             .v-breadcrumbs__item--disabled {
                 color: #FFF;
-                font-size: 16px;
+                font-size: 1.2em;
             }
         }
     }
     .theme--light.v-system-bar .v-icon {
-        font-size: 20px;
-            color: #FFF;
+        font-size: 1.6em;
+        color: #FFF;
     }
 </style>

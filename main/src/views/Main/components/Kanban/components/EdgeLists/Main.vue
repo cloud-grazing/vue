@@ -136,17 +136,17 @@ export default {
             text-align: center;
             font-weight: bold;
             .tip-title {
-                font-size: 20px;
+                font-size: 1.3em;
                 overflow : hidden;
                 text-overflow : ellipsis;
                 white-space : nowrap;
                 text-decoration: underline;
             }
             .tip-number {
-                font-size: 80px;
+                font-size: 4.3em;
             }
             &:nth-child(1) .tip-number {
-                font-size: 65px;
+                font-size: 3.6em;
             }
             &:nth-child(3) .tip-number {
                 color: #F00;

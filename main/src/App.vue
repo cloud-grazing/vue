@@ -40,7 +40,7 @@ export default {
   // lg: 800px, xl: 1280px
   &.app-md,
   &.app-xl {
-    font-size: 1.2em;
+    font-size: 1.1em;
   }
 }
 </style>

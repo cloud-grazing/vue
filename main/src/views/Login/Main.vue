@@ -18,7 +18,7 @@
                 </div>
                 <div class="login-from">
                     <div class="login-from-wrap">
-                        <img src="@/assets/LEDALogo.png" alt="" srcset="" width="320" />
+                        <img src="@/assets/LEDALogo.png" alt="" srcset="" />
                         <p>SPACE Log In</p>
                         <v-form>
                             <v-container>
@@ -121,6 +121,9 @@ export default {
             width: 0px;
             height: 100%;
         }
+        img {
+            width: 320px;
+        }
         .login-from-wrap {
             display: inline-block;
             vertical-align: middle;
@@ -171,7 +174,12 @@ export default {
             padding-top: 40px;
             width: 100%;
             height: auto;
-            // height: calc(100% -260);
+            img {
+                width: 280px;
+            }
+            .login-from-wrap {
+                width: 280px;
+            }
         }
     }
 }

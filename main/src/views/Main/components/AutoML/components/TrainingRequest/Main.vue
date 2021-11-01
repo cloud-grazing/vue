@@ -54,7 +54,6 @@
                 </form>
             </validation-observer>
         </div>
-
         <div class="mt-5 observer2">
             <!-- TRAING SUBMIT -->
             <validation-observer
@@ -96,7 +95,6 @@
                             required
                         />
                     </validation-provider>
-
                     <v-btn
                         class="white--text"
                         xLarge
@@ -109,6 +107,69 @@
                 </form>
             </validation-observer>
         </div>
+
+        <!-- Training Model setup -->
+        <v-row justify="center">
+            <v-dialog
+                v-model="dialog"
+                maxWidth="600px"
+            >
+                <validation-observer
+                    ref="observer3"
+                    v-slot="{ invalid }"
+                >
+                    <v-card>
+                        <v-card-title>
+                            <span class="text-h5">training model setup</span>
+                        </v-card-title>
+                        <v-card-text>
+                            <v-container>
+                                model parameters setup
+                                <v-select
+                                    :items="['d200921-002', 'd200921-003', 'd200921-004', 'd200921-005']"
+                                    label="dataset ID"
+                                    required
+                                />
+                                <v-text-field label="batch size" required />
+                                <v-text-field label="learning rate" required />
+                                <v-text-field label="epoch#" required />
+                                <v-text-field label="pre-epoch#" required />
+                                <v-radio-group v-model="row2" label="feature extract" row>
+                                    <v-radio label="True" value="1" /> <v-radio label="False" value="0" />
+                                </v-radio-group>
+                                <v-radio-group v-model="row" label="device" row>
+                                    <v-radio label="GPU" value="GPU" /> <v-radio label="CPU" value="CPU" />
+                                </v-radio-group>
+                                <v-text-field label="GPU ID" required />
+                                <v-text-field label="Train Ratio" required />
+                            </v-container>
+                        </v-card-text>
+                        <v-card-actions>
+                            <v-spacer />
+                            <v-btn
+                                class="white--text"
+                                xLarge
+                                type="submit"
+                                :disabled="invalid"
+                                color="info"
+                                @click="dialog = false"
+                            >
+                                CONFIRM
+                            </v-btn>
+                            <v-btn
+                                class="white--text"
+                                xLarge
+                                :disabled="invalid"
+                                color="blue-grey"
+                                @click="dialog = false"
+                            >
+                                CANCEL
+                            </v-btn>
+                        </v-card-actions>
+                    </v-card>
+                </validation-observer>
+            </v-dialog>
+        </v-row>
     </div>
 </template>
 
@@ -131,10 +192,8 @@ export default {
     },
     data() {
         return {
-            name: '',
-            phoneNumber: '',
-            email: '',
-            select: null,
+            dialog: false,
+            checkbox: false,
             data: {
                 ModelCategory: [
                     { name: 'classification model', id: 'o01-342' },
@@ -183,7 +242,8 @@ export default {
         },
         submit2() {
             this.$refs.observer2.validate();
-            console.log(this.post, 'post');
+            console.log(this.post, 'post2');
+            this.dialog = !this.dialog;
         }
     }
 

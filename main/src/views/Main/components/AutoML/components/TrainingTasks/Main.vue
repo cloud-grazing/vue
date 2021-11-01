@@ -76,18 +76,22 @@ export default {
         },
         editedIndex: -1,
         editedItem: {
-            name: '',
-            calories: 0,
-            fat: 0,
-            carbs: 0,
-            protein: 0
+            CreatingTime: '',
+            CreatingUser: '',
+            ModelName: '',
+            Project: '',
+            Status: '',
+            Step: '',
+            TaskID: ''
         },
         defaultItem: {
-            name: '',
-            calories: 0,
-            fat: 0,
-            carbs: 0,
-            protein: 0
+            CreatingTime: '',
+            CreatingUser: '',
+            ModelName: '',
+            Project: '',
+            Status: '',
+            Step: '',
+            TaskID: ''
         },
         currentDeleteTaskID: ''
     }),
@@ -116,12 +120,14 @@ export default {
         },
         deleteItem(item) {
             this.currentDeleteTaskID = item.TaskID;
+            console.log(item, 'item');
             this.editedIndex = this.data.List.indexOf(item);
+            console.log(this.editedIndex, 'this.editedIndex ');
             this.editedItem = { ...item };
             this.dialogDelete = true;
         },
         deleteItemConfirm() {
-            this.desserts.splice(this.editedIndex, 1);
+            this.data.List.splice(this.editedIndex, 1);
             this.closeDelete();
         },
         closeDelete() {

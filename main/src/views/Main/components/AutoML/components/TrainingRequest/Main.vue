@@ -173,6 +173,9 @@ export default {
             checkbox: null
         };
     },
+    created() {
+        console.log(this.data, 'data');
+    },
     methods: {
         submit() {
             this.$refs.observer.validate();
